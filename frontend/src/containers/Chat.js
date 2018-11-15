@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import WebSocketInstance from '../websocket';
 
 
@@ -79,16 +78,7 @@ class Chat extends React.Component {
     render() {
         const messages = this.state.messages;
         return (
-            <div className="content">
-                <div className="contact-profile">
-                    <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-                    <p>{this.props.username}</p>
-                    <div className="social-media">
-                    <i className="fa fa-facebook" aria-hidden="true"></i>
-                    <i className="fa fa-twitter" aria-hidden="true"></i>
-                    <i className="fa fa-instagram" aria-hidden="true"></i>
-                    </div>
-                </div>
+            <div>
                 <div className="messages">
                     <ul id="chat-log">
                     { 
@@ -118,11 +108,5 @@ class Chat extends React.Component {
         );
     };
 }
-
-const mapStateToProps = state => {
-    return {
-        username: state.username
-    }
-}
   
-export default connect(mapStateToProps)(Chat);
+export default Chat;
