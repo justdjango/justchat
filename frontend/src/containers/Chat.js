@@ -11,7 +11,7 @@ class Chat extends React.Component {
     
         this.waitForSocketConnection(() => {
           WebSocketInstance.addCallbacks(this.setMessages.bind(this), this.addMessage.bind(this))
-          WebSocketInstance.fetchMessages(this.props.currentUser);
+          WebSocketInstance.fetchMessages(this.props.username);
         });
     }
     
@@ -47,7 +47,7 @@ class Chat extends React.Component {
     sendMessageHandler = (e) => {
         e.preventDefault();
         const messageObject = {
-            from: "admin",
+            from: this.props.username,
             content: this.state.message,
         };
         WebSocketInstance.newChatMessage(messageObject);
