@@ -31,6 +31,10 @@ class WebSocketService {
     };
   }
 
+  disconnect() {
+    this.socketRef.close();
+  }
+
   socketNewMessage(data) {
     const parsedData = JSON.parse(data);
     const command = parsedData.command;
@@ -57,7 +61,8 @@ class WebSocketService {
     this.sendMessage({ 
       command: 'new_message', 
       from: message.from, 
-      message: message.content 
+      message: message.content,
+      chatId: message.chatId
     }); 
   }
 
