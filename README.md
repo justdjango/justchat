@@ -28,4 +28,4 @@ To build for deployment:
 npm run build
 ```
 
-Please note this is a **demo project** of the concepts used in building a chat app. It is simply not production ready.
+Please note this is a **demo project** of the concepts used in building a chat app. It is simply not production ready. The project is setup for deployment on Heroku however you'll need to follow tutorials on how to get this [up and running](https://blog.heroku.com/in_deep_with_django_channels_the_future_of_real_time_apps_in_django)
