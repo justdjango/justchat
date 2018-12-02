@@ -8,10 +8,6 @@ class Chat extends React.Component {
 
   initialiseChat() {
     this.waitForSocketConnection(() => {
-      // WebSocketInstance.addCallbacks(
-      //   this.props.setMessages.bind(this),
-      //   this.props.addMessage.bind(this)
-      // );
       WebSocketInstance.fetchMessages(
         this.props.username,
         this.props.match.params.chatID
@@ -38,14 +34,6 @@ class Chat extends React.Component {
       }
     }, 100);
   }
-
-  // addMessage(message) {
-  //   this.setState({ messages: [...this.state.messages, message] });
-  // }
-
-  // setMessages(messages) {
-  //   this.setState({ messages: messages.reverse() });
-  // }
 
   messageChangeHandler = event => {
     this.setState({ message: event.target.value });
@@ -93,7 +81,10 @@ class Chat extends React.Component {
         style={{ marginBottom: arr.length - 1 === i ? "300px" : "15px" }}
         className={message.author === currentUser ? "sent" : "replies"}
       >
-        <img src="http://emilcarlsson.se/assets/mikeross.png" />
+        <img
+          src="http://emilcarlsson.se/assets/mikeross.png"
+          alt="profile-pic"
+        />
         <p>
           {message.content}
           <br />
@@ -129,7 +120,6 @@ class Chat extends React.Component {
   }
 
   render() {
-    const messages = this.state.messages;
     return (
       <Hoc>
         <div className="messages">

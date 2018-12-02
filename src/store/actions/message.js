@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as actionTypes from "./actionTypes";
+import { HOST_URL } from "../../settings";
 
 export const addMessage = message => {
   return {
@@ -29,7 +30,7 @@ export const getUserChats = (username, token) => {
       Authorization: `Token ${token}`
     };
     axios
-      .get(`http://127.0.0.1:8000/chat/?username=${username}`)
+      .get(`${HOST_URL}/chat/?username=${username}`)
       .then(res => dispatch(getUserChatsSuccess(res.data)));
   };
 };
