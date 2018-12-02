@@ -9,6 +9,7 @@ import * as actions from "./store/actions/auth";
 import * as navActions from "./store/actions/nav";
 import * as messageActions from "./store/actions/message";
 import WebSocketInstance from "./websocket";
+import "./assets/style.css";
 
 class App extends React.Component {
   componentDidMount() {

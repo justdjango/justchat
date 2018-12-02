@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <title>Justchat</title>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="app" style="width: 100%;"></div>
+    <script>
+      $(".messages").animate({ scrollTop: $(document).height() }, "fast");
+
+      $("#profile-img").click(function() {
+          $("#status-options").toggleClass("active");
+      });
+      
+      $(".expand-button").click(function() {
+        $("#profile").toggleClass("expanded");
+          $("#contacts").toggleClass("expanded");
+      });
+      
+      $("#status-options ul li").click(function() {
+          $("#profile-img").removeClass();
+          $("#status-online").removeClass("active");
+          $("#status-away").removeClass("active");
+          $("#status-busy").removeClass("active");
+          $("#status-offline").removeClass("active");
+          $(this).addClass("active");
+          
+          if($("#status-online").hasClass("active")) {
+              $("#profile-img").addClass("online");
+          } else if ($("#status-away").hasClass("active")) {
+              $("#profile-img").addClass("away");
+          } else if ($("#status-busy").hasClass("active")) {
+              $("#profile-img").addClass("busy");
+          } else if ($("#status-offline").hasClass("active")) {
+              $("#profile-img").addClass("offline");
+          } else {
+              $("#profile-img").removeClass();
+          };
+          
+          $("#status-options").removeClass("active");
+      });
+    </script>
+  </body>
+</html>
