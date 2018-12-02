@@ -13,7 +13,7 @@ SECRET_KEY = '9nneu#^7_aai*(#(6_qiihu-^k-+%a86&vjh=_i9#(c4^8s51n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://justdjango-chat.herokuapp.com/']
+ALLOWED_HOSTS = ['justdjango-chat.herokuapp.com']
 
 
 # Application definition
