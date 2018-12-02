@@ -109,6 +109,7 @@ CORS_ORIGIN_WHITELIST = ('localhost:3000')
 ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+CSRF_COOKIE_NAME = "csrftoken"
 
 HOST_URL = 'https://justdjango-chat.herokuapp.com'
 if DEBUG:
