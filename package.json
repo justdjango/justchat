@@ -26,5 +26,9 @@
     "@babel/core": "^7.1.5",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-react": "^7.0.0"
+  },
+  "engines": {
+    "node": "10.10.0",
+    "npm": "6.4.1"
   }
 }
